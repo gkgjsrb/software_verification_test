@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-@RunWith(SerenityRunner.class)
 public class SumTest {
     private Sum sum;
 
