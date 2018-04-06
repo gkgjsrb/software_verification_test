@@ -3,4 +3,11 @@ language: java
 before_install:
   - chmod +x gradlew
 
-script : "gradle build"
+addons:
+	sonarcloud:
+		organization: "gkgjsrb-github"
+			token:
+				secure: SONAR_TOKEN
+script : 
+	- gradle build
+	- sonar-scanner
