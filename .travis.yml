@@ -10,4 +10,4 @@ addons:
     secure: SONAR_TOKEN
 script :
  - gradle build
- - sonar-scanner
+ - sonar-scanner -X
