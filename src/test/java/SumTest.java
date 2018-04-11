@@ -19,7 +19,7 @@ public class SumTest {
 
     @Test
     public void sum() {
-        assertEquals(this.sum.sum(3, 5), 8);
+        assertEquals(this.sum.sum(3, 4), 7);
     }
 
     @Test
