@@ -9,7 +9,4 @@ addons:
   token:
     secure: SONAR_TOKEN
 script :
- -gradlew sonarqube
-  -Dsonar.organization=gkgjsrb-github
-  -Dsonar.host.url=https://sonarcloud.io
-  -Dsonar.login=5d03e975ae60555d8a27cf27ebfd6a63fff2dcb3
+ -sonar-scanner
