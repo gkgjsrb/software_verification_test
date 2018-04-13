@@ -1,4 +1,7 @@
 language: java
+jdk:
+ - oraclejdk8
+install : true
 
 addons:
  sonarcloud:
@@ -10,4 +13,10 @@ before_install:
   - chmod +x gradlew
 
 script :
- - sonar-scanner -X -Dsonar.projectVersion=1.0.0
+ ./gradlew clean check sonarqube build
+cache:
+ directories:
+ $HOME/.m2/repository
+ $HOME/.sonar/cache
+ $HOME/.gradle
+ .gradle
