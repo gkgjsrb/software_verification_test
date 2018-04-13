@@ -13,7 +13,7 @@ before_install:
   - chmod +x gradlew
 
 script :
- - sonar-scanner findbugs
+ - sonar-scanner list
 cache:
  directories:
   $HOME/.m2/repository
