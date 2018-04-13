@@ -1,12 +1,13 @@
 language: java
 
-before_install:
-  - chmod +x gradlew
-
 addons:
  sonarcloud:
   organization: "gkgjsrb-github"
   token:
-    secure: SONAR_TOKEN
+    secure: SONAR_TOKE
+
+before_install:
+  - chmod +x gradlew
+
 script :
- - sonar-scanner -X
+ - sonar-scanner -X -Dsonar.projectVersion=1.0.0
