@@ -1,17 +1,29 @@
-plugins{
- id "org.sonarqube" version "2.6"
-}
-apply plugin: 'java'
-
-group 'org.test.sonarqube'
-version '1.0-SNAPSHOT'
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
+apply plugin: 'jdepend'
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+//   jdepend 'jdepend:jdepend:2.9.1'
 }
 
+jdepend {
+   toolVersion = "2.9.1"
+   sourceSets = [sourceSets.main]
+   ignoreFailures = true
+}
+
+jdependMain {
+   reports {
+      xml.enabled true
+      text.enabled false
+   }
+}
+
+task jdependReport(dependsOn: jdependMain, group: 'verification', description: 'Generates a HTML report after executing jdepend checks.') << {
+   ant.xslt(
+      in: "$reporting.baseDir/jdepend/main.xml",
+      style: "$rootDir/conf/jdepend/jdepend-report.xslt",
+      out:"$reporting.baseDir/jdepend/main.html")
+}
+
+check {
+   dependsOn += ['jdependReport']
+}}

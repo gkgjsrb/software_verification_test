@@ -3,6 +3,12 @@ jdk:
  - oraclejdk8
 install : true
 
+addons:
+ sonarcloud:
+  organization: "gkgjsrb-github"
+  token:
+    secure: fa8f6df5d21a63a05464792ecf195f5864837dc5
+
 before_install:
   - chmod +x gradlew
 
