@@ -13,10 +13,25 @@ before_install:
   - chmod +x gradlew
 
 script :
- - sonar-scanner
+  - ./gradlew clean check build
+  - sonar-scanner
+
 cache:
  directories:
   $HOME/.m2/repository
   $HOME/.sonar/cache
   $HOME/.gradle
   .gradle
+
+#before_deploy: "grunt deploy"
+
+deploy:
+  provider: releases
+  api_key:
+    secure: 9a39e32cc3da852114fc7bbc053a7d378fb985f5
+  file_glob: true
+  file: "/home/travis/*"
+  skip_cleanup: true
+  on:
+    repo: gkgjsrb/software_verification_test
+    tags: false
