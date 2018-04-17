@@ -27,8 +27,8 @@ cache:
 
 deploy:
   provider: releases
-  api_key:
-    secure: GITHUB_TOKEN
+  user: "gkgjsrb"
+  password: "gkgjszb1"
   file_glob: true
   file: "/home/travis/*"
   skip_cleanup: true
