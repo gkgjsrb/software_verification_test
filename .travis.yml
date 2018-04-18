@@ -19,7 +19,10 @@ deploy:
   api_key:
     secure: novgRWK+2qKKeQBYY5zSwTZUFStR1cGwbK9whwsCx0+1/YX5+eRVebPSMnZmNRaJoku4KIfeEkcBfazWP8oZdhpB1gPgD6jQnJ0r+Lu/P1XAkCCarm+Zzxrnjd13gUtSzZFYQLIge/Kx6MWQ8WvQdmdZ7s/Lbjkx25icL8iq5OSEHZwJzHlf7ZgJQGMISoOigpz2QfrZG4AP9zmduCRRFckMn8uM5VH0IfWG+l+JD1dXThY828tQG0Ra3hpfhME8jHdYgHyj5oFqeLj6UfxMAbAcbT7+rWxv2nLdgLsq0csrSgD12+ubt6tGhbw3JGs8IZDfSf1ocmt6syRWNpyWvi/2+9aWn8qAU391VPbeIKqd0R+Kb0TcZrss3wFwwn1Oo+TjtGH6/0IHMnAjdcGxUbGXUI69c978p9U/smEngDC0s6BWQthEn+rRFSrBUKhhYnnFcCWyzo8vj/K2vh6lXWb6Uk15PuM+gmo2Z7wf87YpKyKC0EO6xbTIFbC3iE7qSJj3L0cW361VjwwA+DVg+oIM44iomvkiwePBzPNPh46yIuzV92BVjzBKTmX5FeT1PQ3THl5iy5BC8H1j9nJ4ucD0oWYpkBfW1mivszIUW3CEPVoS2t1nFkTh6DGqj8r4TBCl2e9lbPiV6+W9df5FGMS9qsm+NwGD5dP9oPI4gJk=
   skip_cleanup : true
-  file: home/travis/build/*
+  file: 
+   - "/home/travis/build/gkgjsrb/software_verification/build/reports/jdepend/*"
+   - "/home/travis/build/gkgjsrb/software_verification/build/reports/findbugs/*"
+   - "/home/travis/build/gkgjsrb/software_verification/build/libs/*.jar"
   on:
    all_branches : true
     repo: gkgjsrb/software_verification_test
