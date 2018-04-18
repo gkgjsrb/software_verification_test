@@ -14,6 +14,10 @@ script:
 - sonar-scanner
 cache:
   directories: "$HOME/.m2/repository $HOME/.sonar/cache $HOME/.gradle .gradle"
+before_deploy:
+     - git config --local user.name "gkgjsrb"
+     - git config --local user.email "gkgjsrb@gmail.com"
+     - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 deploy:
   provider: releases
   api_key:
